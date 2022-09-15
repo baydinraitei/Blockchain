@@ -58,14 +58,14 @@ Voici un exemple d'utilisation de msg.sender pour mettre à jour un mapping :
 mapping (address => uint) favoriteNumber;
 
 `function setMyNumber(uint _myNumber) public {
-  // Mettre à jour notre mappage `favoriteNumber` pour stocker `_myNumber` sous `msg.sender`
+  // Mettre à jour notre mappage favoriteNumber pour stocker _myNumber sous msg.sender
   favoriteNumber[msg.sender] = _myNumber;
-  // ^ La syntaxe pour stocker des données dans un mappage est la même qu'avec les tableaux
+  // La syntaxe pour stocker des données dans un mappage est la même qu'avec les tableaux
 }
 
 function whatIsMyNumber() public view returns (uint) {
   // On récupère la valeur stockée à l'adresse de l'expéditeur
-  // Qui sera `0` si l'expéditeur n'a pas encore appelé `setMyNumber`
+  // Qui sera 0 si l'expéditeur n'a pas encore appelé setMyNumber
   return favoriteNumber[msg.sender];
 }`
 
@@ -77,8 +77,8 @@ require est pratique pour vérifier que certaines conditions soient vraies avant
 
 `function sayHiToVitalik(string _name) public returns (string) {
   // Regarde si _name est égal à "Vitalik". Renvoie une erreur et quitte si ce n'est pas le cas.
-  // (Remarque : Solidity n'a pas de comparateur de `string` nativement,
-  // nous comparons donc leurs hachages keccak256 pour voir si les `string` sont égaux)
+  // (Remarque : Solidity n'a pas de comparateur de string nativement,
+  // nous comparons donc leurs hachages keccak256 pour voir si les string sont égaux)
   require(keccak256(_name) == keccak256("Vitalik"));
   // Si c'est vrai, on continue avec la fonction :
   return "Hi!" ;                                                                        
