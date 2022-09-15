@@ -30,8 +30,9 @@ Cle privée => permet d'accéder au compte
 Wallet => Regroupe les adresses logique pour accéder au tokens
 Une transaction c’est un message qui s’envoie d’un compte à un compte 
 
-Deploiement 
+#Deploiement 
 
+Le deploiement s’effectue via metamask, le compte qui déployer par remix ide est dis propriétaire
 Toujours vérifier le code source si on voit que c’est pas commenté que les fonctions ne veulent rien dire fuir c’est un truc d’arnaque on peux verifier si c’est un bon truc avec le Hash (identifiant)
 Uniswap protocol c’est un contrat ou ils ont cree un marché pour vendre acheter des crypto 
 Le gaz c’est une estimation de ce qui va couter au déploiement et a la transaction (c le cout du calcul de la machine)
@@ -57,7 +58,7 @@ https://www.arweave.org/
 https://ipfs.tech/
 cours solidity 
 
-msg.sender
+#msg.sender
 En Solidity, il existe des variables globales accessibles à toutes les fonctions.
 L'une d'elles est msg.sender, qui faire référence à l’adresse de la personne (ou du smart contract) qui a appelée la fonction actuelle.
 
@@ -79,7 +80,7 @@ function whatIsMyNumber() public view returns (uint) {
 Utiliser msg.sender apporte de la sécurité à la blockchain Ethereum - la seule manière pour quelqu'un de modifier les données d'un autre serait de lui voler sa clé privée associée à son adresse Ethereum.
 
 
-Require
+#Require
 require est pratique pour vérifier que certaines conditions soient vraies avant d'exécuter une fonction.
 
 function sayHiToVitalik(string _name) public returns (string) {
@@ -105,9 +106,6 @@ https://www.arweave.org/ => storage permently
 
 
 Devices : nano s plus => clé de stockage des clés privé pour les cryptos
-
-
-Le deploiement s’effectue via metamask, le compte qui déployer par remix ide est dis propriétaire
 
 Read contract permet de consulter le retrieve et consulter l’objet de contrat 
 Write contract permet d’utiliser le contrat monnayant frais de gas 
