@@ -1,24 +1,19 @@
 # Blockchain
 
 Blockchain
- Qu’est ce que la blockchain ?
-Utilise le principe du réseau pair a pair (réseau d’information) => réseau décentralisé comme par ex git qui utilise un réseau décentralisé 
+
+Se base sur le principe du réseau peer to peer (réseau d’information) => réseau décentralisé : git 
 Cryptographie donnée d’entrée et de sortie 
 Clé privée, clé publique 
 
 Scientifiques qui ont publiés des papiers sur la blockchain : (se renseigner)
-	1991
-Stuart Haber 
-Scott Stornetta 
-1992
-Merkle Tree
-Double Spend
-dApps
-Vitalik Buterin 
+	1991 : Stuart Haber ,Scott Stornetta 
+1992 : Merkle Tree, Double Spend, dApps, Vitalik Buterin 
 
-Tous les jetons sont identiques on ne peut pas les dissocier ils sont dans la blockchain (base de données) et on les utilise pour faire des transactions.
+Tous les jetons sont identiques on ne peut pas les dissocier ils sont dans la blockchain on les utilise notamment pour faire des transactions.
 
-Chainage de block
+#Chainage de block
+
 Le hash d’un bloc c’est l’ID unique et le pointeur 
 Un block contient des transactions 
 C’est le principe des listes chainées 
@@ -29,10 +24,10 @@ Un nœud c’est un serveur, ordinateur etc
 
 Evm => machine virtuelle etherum disponible sur : https://etherum.org/
 Deux types de cle :
-Cle public permet de consulter l’activité du compte
-Cle privée 
+Cle public =>  permet de consulter l’activité du compte
+Cle privée => permet d'accéder au compte
 
-Wallet ( là où sont nos jetons(les tokens) )
+Wallet => Regroupe les adresses logique pour accéder au tokens
 Une transaction c’est un message qui s’envoie d’un compte à un compte 
 
 Deploiement 
@@ -56,6 +51,8 @@ apres deploiement amusez vous à vous envoyer une certaine quantité de jeton vi
 decriver comment on peut gérer les nombres a virgules flottantes avec solidity 
 pourquoi parle-t-on de nombre de decimales au sein du contrat ERC20.sol ?
 comment se comporte les blockchains avec le stockage massif de fichiers ?
+
+
 https://www.arweave.org/
 https://ipfs.tech/
 cours solidity 
@@ -111,12 +108,9 @@ Devices : nano s plus => clé de stockage des clés privé pour les cryptos
 
 EVM => machine virtuelle ethereum disponible sur ethereum.org
 
-Clé publique permet de consulter l’activité du compte 
-Se consulte au moment du déploiement  
-Clé privé pour se connecter 
 
-Une transaction  est un messages deux comptes 
-Wallet destinée a stocker les adresses de jeton 
+
+
 Le deploiement s’effectue via metamask, le compte qui déployer par remix ide est dis propriétaire
 
 Read contract permet de consulter le retrieve et consulter l’objet de contrat 
