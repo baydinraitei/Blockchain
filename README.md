@@ -64,8 +64,8 @@ function setMyNumber(uint _myNumber) public {
 }
 
 function whatIsMyNumber() public view returns (uint) {
- *// On récupère la valeur stockée à l'adresse de l'expéditeur*
-  *// Qui sera 0 si l'expéditeur n'a pas encore appelé setMyNumber*
+ // On récupère la valeur stockée à l'adresse de l'expéditeur
+ // Qui sera 0 si l'expéditeur n'a pas encore appelé setMyNumber
   return favoriteNumber[msg.sender];
 }
 ```
