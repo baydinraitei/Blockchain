@@ -111,4 +111,8 @@ Read contract permet de consulter le retrieve et consulter l’objet de contrat
 Write contract permet d’utiliser le contrat monnayant frais de gas 
 ABI => Application binary interface 
 
+Les décimales sont uttilisé par ERC20 qui sont la multiplication par des puissance de 10 : elle sont uttilisé pour eviter d'avoir des type Float 
+OVERRIRDE permet la surchage et dans ce cas nous pouvons changer la valeur du gas qui exprimer en wei 
+Gas : Il s'agit du carburant uttilisé pour les transaction il est exprimé  en giga wei
+
 
