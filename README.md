@@ -1,7 +1,5 @@
 # Blockchain
 
-Blockchain
-
 Se base sur le principe du réseau peer to peer (réseau d’information) => réseau décentralisé : git 
 Cryptographie donnée d’entrée et de sortie 
 Clé privée, clé publique 
