@@ -87,6 +87,26 @@ function sayHiToVitalik(string _name) public returns (string) {
 
 Si vous appelez la fonction avec sayHiToVitalik("Vitalik"), elle va renvoyer "Hi!". Si vous l'appelez avec un autre argument, elle va renvoyer une erreur et ne elle ne va pas s’exécuter.
 
+# Héritage
+
+A la place de faire un contrat vraiment long, il vaut mieux parfois séparer la logique de votre code en plusieurs contrats pour mieux l'organiser.
+Une des fonctionnalités de Solidity qui rend les contrats plus facile à gérer est l'héritage :
+```
+contract Doge {
+  function catchphrase() public returns (string) {
+    return "So Wow CryptoDoge";
+  }
+}
+contract BabyDoge is Doge {
+  function anotherCatchphrase() public returns (string) {
+    return "Such Moon BabyDoge";
+  }
+}
+```
+BabyDoge hérite de Doge. Cela veut dire que si vous compilez et déployez BabyDoge, il aura accès à catchphrase() et à anotherCatchphrase() (et n'importe quelle fonction publique que nous définirions dans Doge).
+
+Cela peut être utilisé pour les héritages logiques (comme avec les sous-classes, un Chat est un Animal). Mais cela peut aussi simplement être utilisé pour organiser votre code en groupant les logiques similaires en différentes classes. En gros on hérite une fonction en utilisant le « is » dans le nouveau contrat.
+
 # Notes
 
 Outils :  https://remix-project.org/ => ide en ligne
