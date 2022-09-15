@@ -129,7 +129,7 @@ OVERRIRDE permet la surchage et dans ce cas nous pouvons changer la valeur du ga
 Gas : Il s'agit du carburant uttilisé pour les transaction il est exprimé  en giga wei
 
 # Projet :
-`deployer un smart contract qui cree un token de type ERC20 : après déploiement amusez-vous à vous envoyer une certaine quantité de jeton via metamask`
+`Déployer un smart contract qui crée un token de type ERC20 : après déploiement amusez-vous à vous envoyer une certaine quantité de jeton via metamask`
 
 1. Décrivez comment on peut gérer les nombres à virgules flottantes avec Solidity ?
 
