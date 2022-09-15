@@ -124,3 +124,7 @@ Les décimales sont uttilisé par ERC20 qui sont la multiplication par des puiss
 3. Comment se comporte les blockchains avec le stockage massif de fichier ?
 
 Dans le stockage blockchain, les fichiers sont d’abord séparés dans un processus appelé sharding. Chaque tesson est copié pour éviter toute perte de données en cas d’erreur de transmission. Les fichiers sont également cryptés à l’aide d’une clé privée qui rend impossible leur consultation par d’autres nœuds du réseau. Les shards répliqués sont distribués entre les nœuds décentralisés du monde entier. Les interactions sont enregistrées dans le grand livre de la blockchain, ce qui permet au système de confirmer et de synchroniser les transactions entre les nœuds de la blockchain. Le stockage blockchain est conçu pour sauvegarder ces interactions pour toujours et les données ne peuvent jamais être modifiées.
+
+4-Quelle est l'impact de la modification des frais de gas lors d'une transaction ?
+
+La diminution des frais de gas en dessous d'un certain taux minimal fait echouer la transaction , dans le cas d'une augmentation la priorité de la transaction est augmenté et donc les frais versé au mineux egalement la différence entre le prix total et le prix payé est remboursé à l'emetteur
