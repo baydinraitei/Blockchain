@@ -6,7 +6,7 @@ Se base sur le principe du réseau peer to peer (réseau d’information) => ré
 Cryptographie donnée d’entrée et de sortie 
 Clé privée, clé publique 
 
-Scientifiques qui ont publiés des papiers sur la blockchain : (se renseigner)
+Scientifiques qui ont publiés des papiers sur la blockchain :
 	1991 : Stuart Haber ,Scott Stornetta 
 1992 : Merkle Tree, Double Spend, dApps, Vitalik Buterin 
 
@@ -56,9 +56,10 @@ comment se comporte les blockchains avec le stockage massif de fichiers ?
 https://www.arweave.org/
 https://ipfs.tech/
 cours solidity 
+
 msg.sender
 En Solidity, il existe des variables globales accessibles à toutes les fonctions.
- L'une d'elles est msg.sender, qui faire référence à l’adresse de la personne (ou du smart contract) qui a appelée la fonction actuelle.
+L'une d'elles est msg.sender, qui faire référence à l’adresse de la personne (ou du smart contract) qui a appelée la fonction actuelle.
 
 Voici un exemple d'utilisation de msg.sender pour mettre à jour un mapping : 
 mapping (address => uint) favoriteNumber;
@@ -103,12 +104,7 @@ NFT = erc761
 https://www.arweave.org/ => storage permently
 
 
-
 Devices : nano s plus => clé de stockage des clés privé pour les cryptos
-
-EVM => machine virtuelle ethereum disponible sur ethereum.org
-
-
 
 
 Le deploiement s’effectue via metamask, le compte qui déployer par remix ide est dis propriétaire
