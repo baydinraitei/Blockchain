@@ -31,11 +31,10 @@ Une transaction c’est un message qui s’envoie d’un compte à un compte
 # Deploiement 
 
 Le deploiement s’effectue via metamask, le compte qui déployer par remix ide est dis propriétaire
-Toujours vérifier le code source si on voit que c’est pas commenté que les fonctions ne veulent rien dire fuir c’est un truc d’arnaque on peux verifier si c’est un bon truc avec le Hash (identifiant)
 Uniswap protocol c’est un contrat ou ils ont cree un marché pour vendre acheter des crypto 
-Le gaz c’est une estimation de ce qui va couter au déploiement et a la transaction (c le cout du calcul de la machine)
-Si se gaz est épuisé la transaction ne peut pas passer (c comme le principe d’un carburant)
-Le prix est définis par le proprietaire du metamask (cad qu’on peut le choisir,le modifier etc)
+Le gaz c’est une estimation de ce qui va couter au déploiement et a la transaction (c'est le cout du calcul de la machine)
+Si se gaz est épuisé la transaction ne peut pas passer (c'est comme le principe d’un carburant)
+Le prix est définit par le proprietaire du metamask (cad qu’on peut le choisir,le modifier etc)
 
 https://github.com/OpenZeppelin => collectif de developpeur qui créer des contrats 
 erc20 => créer un jeton de ce type reviens a créer un smart contract de solidity 
@@ -118,9 +117,9 @@ OpenZepellin => collectif de developpeur , erc20
 NFT = erc761 
 https://www.arweave.org/ => storage permently
 
+Toujours vérifier le code source si on voit que ce nest pas commenté et que les fonctions ne veulent rien dire cela signifie que ce n'est pas un compte fiable c’est On peut le verifier avec le Hash (identifiant).
 
 Devices : nano s plus => clé de stockage des clés privé pour les cryptos
-
 Read contract permet de consulter le retrieve et consulter l’objet de contrat 
 Write contract permet d’utiliser le contrat monnayant frais de gas 
 ABI => Application binary interface 
