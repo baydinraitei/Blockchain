@@ -46,8 +46,8 @@ code :
 context = contrat
 is = heritage 
 
-projet à rendre :
-deployer un smart contract qui cree un token de type ERC20 : apres deploiement amusez vous à vous envoyer une certaine quantité de jeton via metamask
+# Projet :
+deployer un smart contract qui cree un token de type ERC20 : après déploiement amusez-vous à vous envoyer une certaine quantité de jeton via metamask
 
 1. Décrivez comment on peut gérer les nombres à virgules flottantes avec Solidity ?
 
