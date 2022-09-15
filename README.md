@@ -46,22 +46,6 @@ code :
 context = contrat
 is = heritage 
 
-# Projet :
-deployer un smart contract qui cree un token de type ERC20 : après déploiement amusez-vous à vous envoyer une certaine quantité de jeton via metamask
-
-1. Décrivez comment on peut gérer les nombres à virgules flottantes avec Solidity ?
-
-La principale différence entre les nombres à virgule flottante (float``et ``double dans de nombreux langages, plus précisément les nombres IEEE 754) et les nombres à virgule fixe est que le nombre de bits utilisés pour l’entier et la partie fractionnaire (la partie après le point décimal) est flexible dans le premier, alors qu’il est strictement défini dans le second. Généralement, en virgule flottante, presque tout l’espace est utilisé pour représenter le nombre, alors que seul un petit nombre de bits définit où se trouve le point décimal.
-
-2. Pourquoi parle-t-on de nombre de décimale au sein du contrat ERC20.sol ?
-
-Les balances de tokens sont gérés sans décimales par les contrats ERC20 – pour une personne possédant 1 token à 18 décimales.En général, c’est 18 décimales qui est choisi pour un token ERC20. 
-Les décimales sont uttilisé par ERC20 qui sont la multiplication par des puissance de 10 : elles sont utilisées pour éviter d'avoir des types Float. 
-
-3. Comment se comporte les blockchains avec le stockage massif de fichier ?
-
-Dans le stockage blockchain, les fichiers sont d’abord séparés dans un processus appelé sharding. Chaque tesson est copié pour éviter toute perte de données en cas d’erreur de transmission. Les fichiers sont également cryptés à l’aide d’une clé privée qui rend impossible leur consultation par d’autres nœuds du réseau. Les shards répliqués sont distribués entre les nœuds décentralisés du monde entier. Les interactions sont enregistrées dans le grand livre de la blockchain, ce qui permet au système de confirmer et de synchroniser les transactions entre les nœuds de la blockchain. Le stockage blockchain est conçu pour sauvegarder ces interactions pour toujours et les données ne peuvent jamais être modifiées.
-
 https://www.arweave.org/
 https://ipfs.tech/
 cours solidity 
@@ -101,7 +85,7 @@ function sayHiToVitalik(string _name) public returns (string) {
 }
 Si vous appelez la fonction avec sayHiToVitalik("Vitalik"), elle va renvoyer "Hi!". Si vous l'appelez avec un autre argument, elle va renvoyer une erreur et ne elle ne va pas s’exécuter.
 
-
+# Notes
 
 Outils :  https://remix-project.org/ => ide en ligne
 https://trufflesuite.com/ => ide local 
@@ -123,4 +107,18 @@ ABI => Application binary interface
 OVERRIRDE permet la surchage et dans ce cas nous pouvons changer la valeur du gas qui exprimer en wei 
 Gas : Il s'agit du carburant uttilisé pour les transaction il est exprimé  en giga wei
 
+# Projet :
+deployer un smart contract qui cree un token de type ERC20 : après déploiement amusez-vous à vous envoyer une certaine quantité de jeton via metamask
 
+1. Décrivez comment on peut gérer les nombres à virgules flottantes avec Solidity ?
+
+La principale différence entre les nombres à virgule flottante (float``et ``double dans de nombreux langages, plus précisément les nombres IEEE 754) et les nombres à virgule fixe est que le nombre de bits utilisés pour l’entier et la partie fractionnaire (la partie après le point décimal) est flexible dans le premier, alors qu’il est strictement défini dans le second. Généralement, en virgule flottante, presque tout l’espace est utilisé pour représenter le nombre, alors que seul un petit nombre de bits définit où se trouve le point décimal.
+
+2. Pourquoi parle-t-on de nombre de décimale au sein du contrat ERC20.sol ?
+
+Les balances de tokens sont gérés sans décimales par les contrats ERC20 – pour une personne possédant 1 token à 18 décimales.En général, c’est 18 décimales qui est choisi pour un token ERC20. 
+Les décimales sont uttilisé par ERC20 qui sont la multiplication par des puissance de 10 : elles sont utilisées pour éviter d'avoir des types Float. 
+
+3. Comment se comporte les blockchains avec le stockage massif de fichier ?
+
+Dans le stockage blockchain, les fichiers sont d’abord séparés dans un processus appelé sharding. Chaque tesson est copié pour éviter toute perte de données en cas d’erreur de transmission. Les fichiers sont également cryptés à l’aide d’une clé privée qui rend impossible leur consultation par d’autres nœuds du réseau. Les shards répliqués sont distribués entre les nœuds décentralisés du monde entier. Les interactions sont enregistrées dans le grand livre de la blockchain, ce qui permet au système de confirmer et de synchroniser les transactions entre les nœuds de la blockchain. Le stockage blockchain est conçu pour sauvegarder ces interactions pour toujours et les données ne peuvent jamais être modifiées.
