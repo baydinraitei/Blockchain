@@ -47,11 +47,18 @@ context = contrat
 is = heritage 
 
 projet à rendre :
-deployer un smart contract qui cree un token de type ERC20 :
-apres deploiement amusez vous à vous envoyer une certaine quantité de jeton via metamask
-decriver comment on peut gérer les nombres a virgules flottantes avec solidity 
-pourquoi parle-t-on de nombre de decimales au sein du contrat ERC20.sol ?
-comment se comporte les blockchains avec le stockage massif de fichiers ?
+deployer un smart contract qui cree un token de type ERC20 : apres deploiement amusez vous à vous envoyer une certaine quantité de jeton via metamask
+
+1. Décrivez comment on peut gérer les nombres à virgules flottantes avec Solidity ?
+
+La principale différence entre les nombres à virgule flottante (float``et ``double dans de nombreux langages, plus précisément les nombres IEEE 754) et les nombres à virgule fixe est que le nombre de bits utilisés pour l’entier et la partie fractionnaire (la partie après le point décimal) est flexible dans le premier, alors qu’il est strictement défini dans le second. Généralement, en virgule flottante, presque tout l’espace est utilisé pour représenter le nombre, alors que seul un petit nombre de bits définit où se trouve le point décimal.
+
+2. Pourquoi parle-t-on de nombre de décimale au sein du contrat ERC20.sol ?
+
+Les balances de tokens sont gérés sans décimales par les contrats ERC20 – pour une personne possédant 1 token à 18 décimales.En général, c’est 18 décimales qui est choisi pour un token ERC20. 
+Les décimales sont uttilisé par ERC20 qui sont la multiplication par des puissance de 10 : elles sont utilisées pour éviter d'avoir des types Float. 
+
+3. Comment se comporte les blockchains avec le stockage massif de fichier ?
 
 
 https://www.arweave.org/
@@ -111,7 +118,7 @@ Read contract permet de consulter le retrieve et consulter l’objet de contrat
 Write contract permet d’utiliser le contrat monnayant frais de gas 
 ABI => Application binary interface 
 
-Les décimales sont uttilisé par ERC20 qui sont la multiplication par des puissance de 10 : elle sont uttilisé pour eviter d'avoir des type Float 
+
 OVERRIRDE permet la surchage et dans ce cas nous pouvons changer la valeur du gas qui exprimer en wei 
 Gas : Il s'agit du carburant uttilisé pour les transaction il est exprimé  en giga wei
 
