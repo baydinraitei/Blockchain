@@ -9,7 +9,7 @@ declare let window: any;
 @Injectable()
 export class Web3Service {
   private web3: any;
-  private accounts: string[];
+  public accounts: string[];
   public ready = false;
 
   public accountsObservable = new Subject<string[]>();
@@ -26,6 +26,7 @@ export class Web3Service {
       // Use Mist/MetaMask's provider
       window.ethereum.enable().then(() => {
         this.web3 = new Web3(window.ethereum);
+        console.log(this.web3);
       });
     } else {
       console.log('No web3? You should consider trying MetaMask!');
@@ -33,7 +34,7 @@ export class Web3Service {
       // Hack to provide backwards compatibility for Truffle, which uses web3js 0.20.x
       Web3.providers.HttpProvider.prototype.sendAsync = Web3.providers.HttpProvider.prototype.send;
       // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
-      this.web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
+      this.web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
     }
 
     setInterval(() => this.refreshAccounts(), 100);

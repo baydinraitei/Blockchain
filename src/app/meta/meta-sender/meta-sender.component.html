@@ -1,27 +1,37 @@
-<mat-card>
-  <mat-card-header>Balance</mat-card-header>
-  <mat-card-content>
-    <mat-form-field id="address-selector" class="address-field">
-      <mat-select name="account" (selectionChange)="refreshBalance()" [(value)]="model.account" placeholder="Address">
-        <mat-option *ngFor="let account of accounts" [value]="account">{{account}}</mat-option>
-      </mat-select>
-    </mat-form-field>
+<div class="page">
+  <div class="header">
+    <h1>Gestionnaire de transaction</h1>
+  </div>
 
-    <p>You have <span id="balance">{{model.balance}}</span> META</p>
-  </mat-card-content>
-</mat-card>
+  <div class="content" *ngIf="this.filteredTransaction">
+    <div class="transac-container">
+      <h2>Mes Ventes</h2>
+      <app-transaction-container (confirmTransactionEvent)="confirmTransaction($event)" *ngFor="let transaction of this.filteredTransaction.vente" [myTransation]="transaction"></app-transaction-container>
+    </div>
 
-<mat-card>
-  <mat-card-header>Send MetaCoin</mat-card-header>
-  <mat-card-content>
-    <mat-form-field>
-      <input type="text" matInput id="amount" placeholder="Amount" (change)="setAmount($event)">
-    </mat-form-field>
-    <mat-form-field class="address-field">
-      <input type="text" matInput id="receiver" placeholder="Receiver Address" (change)="setReceiver($event)">
-    </mat-form-field>
-    <button mat-button id="send" (click)="sendCoin()">Send MetaCoin</button>
-  </mat-card-content>
-</mat-card>
+    <div class="transac-container">
+      <h2>Mes Achats en cours</h2>
+      <app-transaction-container (confirmTransactionEvent)="confirmTransaction($event)" (cancelTransactionEvent)="cancelTransaction($event)" *ngFor="let transaction of this.filteredTransaction.transit" [myTransation]="transaction"></app-transaction-container>
+    </div>
+
+    <div class="transac-container">
+      <h2>Mes Achats en Annulés</h2>
+      <app-transaction-container  *ngFor="let transaction of this.filteredTransaction.cancel" [myTransation]="transaction"></app-transaction-container>
+    </div>
+
+    <div class="transac-container">
+      <h2>Mes Achats Terminés</h2>
+      <app-transaction-container *ngFor="let transaction of this.filteredTransaction.ok" [myTransation]="transaction"></app-transaction-container>
+    </div>
+  </div>
+</div>
+
+<button (click)="addTransaction()">ajout</button>
+<button (click)="attributeTransaction()">test</button>
+
+
+
+
+
 
 

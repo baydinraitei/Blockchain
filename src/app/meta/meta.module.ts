@@ -12,6 +12,8 @@ import {
   MatSelectModule, MatSnackBarModule
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { TransactionContainerComponent } from './transaction-container/transaction-container.component';
+import { StatusPipePipe } from './status-pipe.pipe';
 
 @NgModule({
   imports: [
@@ -27,7 +29,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     RouterModule,
     UtilModule
   ],
-  declarations: [MetaSenderComponent],
+  declarations: [MetaSenderComponent, TransactionContainerComponent, StatusPipePipe],
   exports: [MetaSenderComponent]
 })
 export class MetaModule {

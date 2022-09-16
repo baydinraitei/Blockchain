@@ -1,0 +1,19 @@
+.container {
+  padding: 1rem;
+  border: 3px solid black;
+  margin: 1rem;
+  border-radius: 8px;
+}
+
+.status-0 {
+  background-color: #27ed24 ;
+}
+
+.status-1 {
+  background-color: #eb5e34 ;
+}
+
+.status-2 {
+  background-color: #f7e307;
+}
+

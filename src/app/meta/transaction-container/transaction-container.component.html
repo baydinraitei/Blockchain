@@ -1,0 +1,7 @@
+<div class="container" [ngClass]="['status-'+myTransation.status]">
+    <p>acheteur : {{myTransation.acheteur}}</p>
+    <p>vendeur : {{myTransation.vendeur}}</p>
+    <p>status : {{myTransation.status | statusPipe: StatusEnum}}</p>
+    <button *ngIf="myTransation.status == 2 && !(myTransation.vendeur == connectedUserWallet)" (click)="confirmTransaction(myTransation.id)">J'ai reçu mon colis</button>
+    <button *ngIf="myTransation.status == 2 && !(myTransation.vendeur == connectedUserWallet)" (click)="cancelTransaction(myTransation.id)">J'ai n'ai pas reçu mon colis</button>
+</div>
