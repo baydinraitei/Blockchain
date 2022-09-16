@@ -3,6 +3,13 @@
     <h1>Gestionnaire de transaction</h1>
   </div>
 
+  <div>
+    <form>
+      <input name="adresse" [(ngModel)]="address">
+      <button (click)="addTransaction(this.address)"> Envoyer une transaction </button>
+    </form>
+  </div>
+
   <div class="content" *ngIf="this.filteredTransaction">
     <div class="transac-container">
       <h2>Mes Ventes</h2>

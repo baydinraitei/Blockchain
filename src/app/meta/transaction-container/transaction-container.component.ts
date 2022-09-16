@@ -24,7 +24,6 @@ export class TransactionContainerComponent implements OnInit {
   constructor(private web3Service: Web3Service) { }
 
   ngOnInit() {
-    console.log('init');
     this.connectedUserWallet = this.web3Service.accounts[0];
   }
 

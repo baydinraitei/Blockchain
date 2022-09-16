@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Web3Service} from '../../util/web3.service';
 import {MatSnackBar} from '@angular/material';
-import {id} from 'ethers/utils';
-import {resolve} from '@angular-devkit/core';
+
 
 declare let require: any;
 const transaction_artifacts = require('../../../../build/contracts/Transaction.json');
@@ -31,7 +30,7 @@ export enum Status {
 @Component({
   selector: 'app-meta-sender',
   templateUrl: './meta-sender.component.html',
-  styleUrls: ['./meta-sender.component.css']
+  styleUrls: ['./meta-sender.component.scss']
 })
 export class MetaSenderComponent implements OnInit {
   accounts: string[];
@@ -40,7 +39,7 @@ export class MetaSenderComponent implements OnInit {
   myTransaction: Transaction[] = [];
   filteredTransaction: FilteredTransaction;
 
-
+  address: string;
 
   model = {
     amount: 5,
@@ -58,27 +57,13 @@ export class MetaSenderComponent implements OnInit {
   }
 
   async ngOnInit() {
-    // this.web3Service.artifactsToContract(transaction_artifacts)
-    //   .then((MetaCoinAbstraction) => {
-    //     this.watchAccount();
-    //     console.log(MetaCoinAbstraction);
-    //     this.MetaCoin = MetaCoinAbstraction;
-    //     this.MetaCoin.deployed().then(deployed => {
-    //       deployed.addVente({}, (err, ev) => {
-    //         this.attributeTransaction();
-    //       });
-    //
-    //       deployed.confirm({}, (err, ev) => {
-    //         this.attributeTransaction();
-    //       });
-    //     });
-    //   });
-
+    // recupère données du contrat et actualise l'affichage
     await this.getContrat().then((result) => {
       this.attributeTransaction();
     });
   }
 
+  // méthode de mise à jour du template
   async getContrat() {
     await this.web3Service.artifactsToContract(transaction_artifacts)
       .then((MetaCoinAbstraction) => {
@@ -100,6 +85,7 @@ export class MetaSenderComponent implements OnInit {
       });
   }
 
+  // récupère l'adresse de l'utilisateur connecté
   async watchAccount() {
     this.web3Service.accountsObservable.subscribe((accounts) => {
       this.accounts = accounts;
@@ -107,37 +93,7 @@ export class MetaSenderComponent implements OnInit {
     });
   }
 
-  setStatus(status) {
-    this.matSnackBar.open(status, null, {duration: 3000});
-  }
-
-  async sendCoin() {
-    if (!this.MetaCoin) {
-      this.setStatus('Metacoin is not loaded, unable to send transaction');
-      return;
-    }
-
-    const amount = this.model.amount;
-    const receiver = this.model.receiver;
-
-    console.log('Sending coins' + amount + ' to ' + receiver);
-
-    this.setStatus('Initiating transaction... (please wait)');
-    try {
-      const deployedMetaCoin = await this.MetaCoin.deployed();
-      const transaction = await deployedMetaCoin.sendCoin.sendTransaction(receiver, amount, {from: this.model.account});
-
-      if (!transaction) {
-        this.setStatus('Transaction failed!');
-      } else {
-        this.setStatus('Transaction complete!');
-      }
-    } catch (e) {
-      console.log(e);
-      this.setStatus('Error sending coin; see log.');
-    }
-  }
-
+  // récupère les data de l'utilisateur connecté (ventes et achats)
   async getVenteByOwner() {
     const deployedTransaction = await this.MetaCoin.deployed();
     const account = this.accounts[0];
@@ -145,7 +101,7 @@ export class MetaSenderComponent implements OnInit {
     return response;
   }
 
-
+  // récupère le déteils d'une transaction via l'id
   async getTransactionDetail(transacId) {
     const deployedTransaction = await this.MetaCoin.deployed();
     const value = await deployedTransaction.ventes(transacId);
@@ -153,11 +109,11 @@ export class MetaSenderComponent implements OnInit {
     return value;
   }
 
+  // assignes les datas depuis le smart contract et réalise le mapping en fonctions du statut
   async attributeTransaction() {
    const attributeConnected = await this.getVenteByOwner();
    this.myTransaction = [];
    for (const transacId of attributeConnected) {
-     console.log(transacId.toNumber());
      const transac = await this.getTransactionDetail(transacId.toNumber());
 
      this.myTransaction.push({
@@ -167,18 +123,17 @@ export class MetaSenderComponent implements OnInit {
        status: transac.status.toNumber()
      });
 
-     this.filteredTransaction = this.groupByProximity(this.myTransaction);
+     this.filteredTransaction = this.groupBy(this.myTransaction);
      console.log(this.filteredTransaction);
 
    }
   }
 
-  groupByProximity(xs: any[]) {
+  // sépare les ventes et achats ainsi que les différents statut des transactions
+  groupBy(xs: any[]) {
     return xs.reduce((result, current: Transaction) => {
       const currentStatus = current.status;
       const vendeurAdresse = current.vendeur;
-      console.log(currentStatus);
-      console.log(Status.Transit);
       if (vendeurAdresse === this.accounts[0]) {
         (result['vente'] = result['vente'] || []).push(current);
       } else if (currentStatus === Status.OK) {
@@ -188,15 +143,15 @@ export class MetaSenderComponent implements OnInit {
       } else if (currentStatus === Status.Transit) {
         (result['transit'] = result['transit'] || []).push(current);
       }
-
       return result;
     }, {});
   }
 
-  async addTransaction() {
+
+  async addTransaction(walletAddress: string) {
     try {
       const deployedTransaction = await this.MetaCoin.deployed();
-      deployedTransaction.send.sendTransaction('0x855e339599E60BF6346CA3A459582154B1C572dF', {from: this.model.account});
+      deployedTransaction.send.sendTransaction(walletAddress, {from: this.model.account});
     } catch (e) {
       console.log(e);
     }

@@ -14,6 +14,7 @@ import {
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { TransactionContainerComponent } from './transaction-container/transaction-container.component';
 import { StatusPipePipe } from './status-pipe.pipe';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import { StatusPipePipe } from './status-pipe.pipe';
     MatSelectModule,
     MatSnackBarModule,
     RouterModule,
-    UtilModule
+    UtilModule,
+    FormsModule
   ],
   declarations: [MetaSenderComponent, TransactionContainerComponent, StatusPipePipe],
   exports: [MetaSenderComponent]

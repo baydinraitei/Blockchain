@@ -26,7 +26,6 @@ export class Web3Service {
       // Use Mist/MetaMask's provider
       window.ethereum.enable().then(() => {
         this.web3 = new Web3(window.ethereum);
-        console.log(this.web3);
       });
     } else {
       console.log('No web3? You should consider trying MetaMask!');
@@ -64,8 +63,6 @@ export class Web3Service {
     }
 
     if (!this.accounts || this.accounts.length !== accs.length || this.accounts[0] !== accs[0]) {
-      console.log('Observed new accounts');
-
       this.accountsObservable.next(accs);
       this.accounts = accs;
     }
