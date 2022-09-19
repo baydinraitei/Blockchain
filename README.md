@@ -147,3 +147,8 @@ Dans le stockage blockchain, les fichiers sont d’abord séparés dans un proce
 4. Quelle est l'impact de la modification des frais de gas lors d'une transaction ?
 
 La diminution des frais de gas en dessous d'un certain taux minimal fait echouer la transaction , dans le cas d'une augmentation la priorité de la transaction est augmenté et donc les frais versé au mineux egalement la différence entre le prix total et le prix payé est remboursé à l'emetteur
+
+# Projet 2:
+
+`Réaliser un projet en lien avec la blockchain` -> Projet disponible sur la branche Master
+
